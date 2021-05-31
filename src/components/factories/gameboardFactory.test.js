@@ -10,8 +10,19 @@ describe('gameboard factory functions', () => {
     expect(testGameboard.shipTypes.carrier.length).toBe(5);
   });
 
-  it('gameboard factory calls shipFactory correctly', () => {
+  it('calls shipFactory correctly', () => {
     testGameboard.placeShip('battleship', 1, 1, 'horizontal');
     expect(testGameboard.shipArray[0].length).toBe(4);
+  });
+
+  it('calls receiveAttack correctly', () => {
+    testGameboard.placeShip('battleship', 1, 1, 'horizontal');
+    testGameboard.receiveAttack(1, 1);
+    expect(
+      (testGameboard.shipArray[0].shipSectors.find(
+        (shipSector) =>
+          shipSector.xCoordinate === 1 && shipSector.yCoordinate === 1
+      )).hit
+    ).toBe(true);
   });
 });
