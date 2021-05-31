@@ -10,5 +10,8 @@ describe('gameboard factory functions', () => {
     expect(testGameboard.shipTypes.carrier.length).toBe(5);
   });
 
-  
+  it('gameboard factory calls shipFactory correctly', () => {
+    testGameboard.placeShip('battleship', 1, 1, 'horizontal');
+    expect(testGameboard.shipArray[0].length).toBe(4);
+  });
 });

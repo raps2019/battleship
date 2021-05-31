@@ -47,7 +47,7 @@ const gameboardFactory = () => {
     }
 
     const ship = shipFactory(shipType, gridPositionsOccupied);
-    shipArray.push({shipType : ship});
+    shipArray.push(ship);
   };
 
   return {
