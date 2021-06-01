@@ -1,15 +1,15 @@
-import shipFactory from './shipFactory';
+import Ship from './ShipFactory';
 
 describe('ship factory functions', () => {
   let testCarrier;
 
   beforeEach(() => {
-    testCarrier = shipFactory('carrier', [
-      { xCoordinate: 1, yCoordinate: 1 },
-      { xCoordinate: 2, yCoordinate: 1 },
-      { xCoordinate: 3, yCoordinate: 1 },
-      { xCoordinate: 4, yCoordinate: 1 },
-      { xCoordinate: 5, yCoordinate: 1 },
+    testCarrier = Ship('carrier', [
+      { xCoord: 1, yCoord: 1 },
+      { xCoord: 2, yCoord: 1 },
+      { xCoord: 3, yCoord: 1 },
+      { xCoord: 4, yCoord: 1 },
+      { xCoord: 5, yCoord: 1 },
     ]);
   });
 
@@ -26,31 +26,31 @@ describe('ship factory functions', () => {
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 1 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 1 && shipSector.yCoord === 1
       ).hit
     ).toBe(true);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 2 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 2 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 3 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 3 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 4 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 4 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 5 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 5 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
   });
@@ -62,31 +62,31 @@ describe('ship factory functions', () => {
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 1 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 1 && shipSector.yCoord === 1
       ).hit
     ).toBe(true);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 2 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 2 && shipSector.yCoord === 1
       ).hit
     ).toBe(true);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 3 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 3 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 4 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 4 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
     expect(
       testCarrier.shipSectors.find(
         (shipSector) =>
-          shipSector.xCoordinate === 5 && shipSector.yCoordinate === 1
+          shipSector.xCoord === 5 && shipSector.yCoord === 1
       ).hit
     ).toBe(false);
   });

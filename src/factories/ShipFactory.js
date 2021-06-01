@@ -1,19 +1,19 @@
-const shipFactory = (type, gridPositionsOccupied) => {
+const Ship = (type, gridPositionsOccupied) => {
   let shipSectors = [];
 
   gridPositionsOccupied.forEach((gridPosition) => {
     shipSectors.push({
-      xCoordinate: gridPosition.xCoordinate,
-      yCoordinate: gridPosition.yCoordinate,
+      xCoord: gridPosition.xCoord,
+      yCoord: gridPosition.yCoord,
       hit: false,
     });
   });
 
-  const registerHit = (xCoordinate, yCoordinate) => {
+  const registerHit = (xCoord, yCoord) => {
     shipSectors.forEach((shipSector) => {
       if (
-        shipSector.xCoordinate === xCoordinate &&
-        shipSector.yCoordinate === yCoordinate
+        shipSector.xCoord === xCoord &&
+        shipSector.yCoord === yCoord
       ) {
         shipSector.hit = true;
       }
@@ -37,5 +37,5 @@ const shipFactory = (type, gridPositionsOccupied) => {
   };
 };
 
-export default shipFactory;
+export default Ship;
 
